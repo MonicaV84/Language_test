@@ -23,13 +23,12 @@ def read_titanic():
 read_titanic()
 df_titanic = read_titanic()
 
-language = st.selectbox('', ['en', 'es'])
-try:
-  localizator = gettext.translation('base', localedir='locales', languages=[language])
+language = st.checkbox('Marque esta casilla si quiere ver la página en inglés')
+if language:
+  localizator = gettext.translation('base', localedir='locales', languages=['en'])
   localizator.install()
   _ = localizator.gettext 
-except:
-    pass
+    
 
 agree = st.checkbox(_('¿Quiere ver las primeras entradas del dataset?'))
 
