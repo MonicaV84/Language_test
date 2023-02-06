@@ -25,8 +25,7 @@ df_titanic = read_titanic()
 
 language = st.checkbox('Marque esta casilla si quiere ver la página en inglés')
 if language:
-      localizator = gettext.translation('base', localedir='locales', languages=['en'])
-localizator.install()
+      localizator = gettext.translation('base', localedir='locales', languages=['en']).localizator.install('en_GB')
 _ = localizator.gettext 
     
 
